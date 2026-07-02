@@ -18,7 +18,7 @@
 
 <br/>
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/username/git)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/Private-Repo-RP/Private-Repo-RP)
 
 </div>
 
