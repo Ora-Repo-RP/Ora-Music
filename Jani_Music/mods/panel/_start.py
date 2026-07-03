@@ -106,9 +106,12 @@ async def start_pm(client, message: Message, _):
             pass
         # Premium animation before start message
         _ANIMS = ["🎶", "🎵", "🎸", "🎹", "🥁", "🎺", "🎻", "🪗"]
-        anim = await message.reply_text(random.choice(_ANIMS))
-        await asyncio.sleep(1.2)
-        await anim.delete()
+        try:
+            anim = await message.reply_text(random.choice(_ANIMS))
+            await asyncio.sleep(1.2)
+            await anim.delete()
+        except Exception:
+            pass
         await message.reply_photo(
             random.choice(YUMI_PICS),
             caption=_["start_2"].format(message.from_user.mention, app.mention, UP, DISK, CPU, RAM,served_users,served_chats),
