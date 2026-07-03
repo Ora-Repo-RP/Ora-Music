@@ -40,11 +40,16 @@ async def helper_private(client: app, update: Union[types.Message, types.Callbac
         _ = get_string(language)  
   
         keyboard = help_pannel(_, True)  
-        try:  
-            await update.edit_message_text(  
-                _["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard  
-            )  
-        except Exception:  
+        try:
+            if update.message.media:
+                await update.edit_message_caption(
+                    caption=_["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard
+                )
+            else:
+                await update.edit_message_text(
+                    _["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard
+                )
+        except Exception:
             pass  
   
     else:  
@@ -83,9 +88,17 @@ async def helper_cb(_, CallbackQuery, language):
   
     keyboard = help_back_markup(language)  
   
-    await CallbackQuery.edit_message_text(  
-        text, reply_markup=keyboard, disable_web_page_preview=True  
-    )  
+    try:
+        if CallbackQuery.message.media:
+            await CallbackQuery.edit_message_caption(
+                caption=text, reply_markup=keyboard
+            )
+        else:
+            await CallbackQuery.edit_message_text(
+                text, reply_markup=keyboard, disable_web_page_preview=True
+            )
+    except Exception:
+        pass
   
   
 @app.on_callback_query(filters.regex('managebot123'))  
@@ -101,8 +114,16 @@ async def on_back_button(client, query):
   
     keyboard = help_pannel(_, True)  
   
-    if cb == "settings_back_helper":  
-        await query.edit_message_text(  
-            _["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard  
-        )  
+    if cb == "settings_back_helper":
+        try:
+            if query.message.media:
+                await query.edit_message_caption(
+                    caption=_["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard
+                )
+            else:
+                await query.edit_message_text(
+                    _["help_1"].format(SUPPORT_CHAT), reply_markup=keyboard
+                )
+        except Exception:
+            pass
   
