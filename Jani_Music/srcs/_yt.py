@@ -54,14 +54,58 @@ def cookie_txt_file():
     cookie_file = os.path.join(cookie_dir, random.choice(cookies_files))
     return cookie_file
 
-async def _download_media(link: str, kind: str, exts: list[str], wait: int = 60):
+def _progress_bar(percent: int) -> str:
+    """Return a green coloured progress bar string for the given percent (0-100)."""
+    filled = int(percent / 10)
+    empty  = 10 - filled
+    bar    = "█" * filled + "░" * empty
+    return f"<b>🟢 {bar} {percent}%</b>"
+
+async def _animated_progress(mystic, label: str, done_event: asyncio.Event):
+    """Show an animated progress bar in *mystic* until done_event is set."""
+    import time as _time
+    start = _time.time()
+    percent = 0
+    prev_text = ""
+    while not done_event.is_set():
+        elapsed = _time.time() - start
+        # Accelerate quickly at start, then slow near 95 %
+        percent = min(95, int(5 + elapsed * 4.5))
+        bar_line = _progress_bar(percent)
+        text = f"{bar_line}\n\n<b>{label}</b>"
+        if text != prev_text:
+            try:
+                await mystic.edit_text(text, parse_mode="html")
+                prev_text = text
+            except Exception:
+                pass
+        await asyncio.sleep(0.8)
+    # Show 100 % briefly
+    try:
+        bar_line = _progress_bar(100)
+        await mystic.edit_text(f"{bar_line}\n\n<b>{label}</b>", parse_mode="html")
+    except Exception:
+        pass
+
+async def _download_media(link: str, kind: str, exts: list[str], wait: int = 60, mystic=None):
     vid = link.split("v=")[-1].split("&")[0]
     os.makedirs("downloads", exist_ok=True)
+    label = "⬇️ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ sᴏɴɢ..." if kind == "song" else "⬇️ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴠɪᴅᴇᴏ..."
+
+    done_event = asyncio.Event()
+    progress_task = None
+    if mystic:
+        progress_task = asyncio.create_task(_animated_progress(mystic, label, done_event))
+
     try:
         if not STREAM_MODE:
             for e in exts:
                 p = f"downloads/{vid}.{e}"
                 if os.path.exists(p):
+                    done_event.set()
+                    if progress_task:
+                        try: await progress_task
+                        except Exception: pass
                     return p
         async with aiohttp.ClientSession() as s:
             url = (
@@ -75,6 +119,10 @@ async def _download_media(link: str, kind: str, exts: list[str], wait: int = 60)
             if not u:
                 raise Exception("no stream")
             if j.get("type") == "live":
+                done_event.set()
+                if progress_task:
+                    try: await progress_task
+                    except Exception: pass
                 return u
             for _ in range(wait):
                 async with s.get(u) as r:
@@ -89,6 +137,10 @@ async def _download_media(link: str, kind: str, exts: list[str], wait: int = 60)
             else:
                 raise Exception("timeout")
             if STREAM_MODE:
+                done_event.set()
+                if progress_task:
+                    try: await progress_task
+                    except Exception: pass
                 return u
             p = f"downloads/{vid}.{'mp3' if kind=='song' else 'mp4'}"
             proc = await asyncio.create_subprocess_shell(
@@ -97,19 +149,27 @@ async def _download_media(link: str, kind: str, exts: list[str], wait: int = 60)
             await proc.communicate()
             if not os.path.exists(p) or os.path.getsize(p) < 50000:
                 raise Exception("dl fail")
+            done_event.set()
+            if progress_task:
+                try: await progress_task
+                except Exception: pass
             return p
     except Exception as e:
+        done_event.set()
+        if progress_task:
+            try: await progress_task
+            except Exception: pass
         await app.send_message(
             LOGGER_ID,
             f"❌ {kind.upper()} ERR\n🔗 `{link}`\n⚠️ `{str(e)[:100]}`"
         )
         raise
 
-async def download_song(link: str):
-    return await _download_media(link, "song", ["mp3", "m4a", "webm"], 60)
+async def download_song(link: str, mystic=None):
+    return await _download_media(link, "song", ["mp3", "m4a", "webm"], 60, mystic=mystic)
 
-async def download_video(link: str):
-    return await _download_media(link, "video", ["mp4", "webm", "mkv"], 90)
+async def download_video(link: str, mystic=None):
+    return await _download_media(link, "video", ["mp4", "webm", "mkv"], 90, mystic=mystic)
     
 
 async def check_file_size(link):
@@ -475,13 +535,13 @@ class YouTubeAPI:
             x.download([link])
             return xyz
         if songvideo or songaudio:
-            await download_song(link)
+            await download_song(link, mystic=mystic)
             vid_id = link.split("v=")[-1].split("&")[0] if "v=" in link else link.split("/")[-1]
             fpath = f"downloads/{vid_id}.mp3"
             return fpath
         elif video:
             try:
-                downloaded_file = await download_video(link)
+                downloaded_file = await download_video(link, mystic=mystic)
                 if downloaded_file:
                     return downloaded_file, True
             except Exception as e:
@@ -493,7 +553,7 @@ class YouTubeAPI:
                 
             if await is_on_off(1):
                 direct = True
-                downloaded_file = await download_song(link)
+                downloaded_file = await download_song(link, mystic=mystic)
             else:
                 proc = await asyncio.create_subprocess_exec(
                     "yt-dlp",
@@ -520,5 +580,5 @@ class YouTubeAPI:
                     downloaded_file = await loop.run_in_executor(None, video_dl)
         else:
             direct = True
-            downloaded_file = await download_song(link)
+            downloaded_file = await download_song(link, mystic=mystic)
         return downloaded_file, direct
