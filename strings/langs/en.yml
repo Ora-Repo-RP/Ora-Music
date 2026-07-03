@@ -87,11 +87,11 @@ admin_40 : "Upvoted."
 start_1 : "<b>╔══〔 ◎ {0} 〕══╗</b>
 
 <blockquote>⟡  System Status  ▸  Online
-⌖  Uptime         ▸  <code>{1}</code></blockquote>
+⌖  Uptime       ▸  <code>{1}</code></blockquote>
 
 <b>╚════════════════════╝</b>"
 start_2 : "<b>╔══════════════════════╗
-║  ▷  W E L C O M E  ║
+║  ▷  Ｗｅｌｃｏｍｅ  ║
 ╚══════════════════════╝</b>
 
 <blockquote>◈  Hello, {0}
@@ -103,11 +103,11 @@ A feature-rich Telegram music bot built for seamless, high-quality streaming —
 ▸ YouTube  ·  Spotify  ·  SoundCloud  ·  Apple Music
 
 <b>◈ System</b>
-⌖ Uptime  ▸  <code>{2}</code>     ⌖ Disk  ▸  <code>{3}</code>
-⌖ CPU    ▸  <code>{4}</code>     ⌖ RAM   ▸  <code>{5}</code>
+⌖ Uptime  ▸  <code>{2}</code>  ⌖ Disk  ▸  <code>{3}</code>
+⌖ CPU  ▸  <code>{4}</code>  ⌖ RAM   ▸  <code>{5}</code>
 
 <b>◈ Reach</b>
-⌖ Users  ▸  <code>{6}</code>     ⌖ Chats  ▸  <code>{7}</code></blockquote>"
+⌖ Users  ▸  <code>{6}</code>  ⌖ Chats  ▸  <code>{7}</code></blockquote>"
 start_3 : "<b>╔══〔 ◎ JOINED CHAT 〕══╗</b>
 
 <blockquote>⟡  Hey {0}
@@ -232,9 +232,8 @@ queue_6 : "<b>⏱️ Duration :</b> Unknown (Live Stream)\n\nClick below for ful
 queue_7 : "\nclick on button below to get whole queued list."
 queue_8 : "🎧 <b>{0}</b>\n\n🎵 <b>Streaming :</b> {1}\n📡 <b>Type :</b> {2}\n👤 <b>By :</b> {3}\n{4}"
 
-stream_1 : "🎵 <b>Started Streaming</b>\n\n<b>◈ Title :</b> <a href={0}>{1}</a>\n<b>◈ Duration :</b> {2} min\n<b>◈ By :</b> {3}"
-stream_2 : "🎵 <b>Started Streaming</b>\n\n<b>◈ Type :</b> Live Stream [URL]\n<b>◈ By :</b> {0}"
-
+stream_1 : "<blockquote>➻ 𝐒ʈᴧʀʈ𝛆ɗ 𝐒ʈʀ𝛆ɑɱɩŋʛ 𝐍๏Ꮗ ●</blockquote>\n<blockquote>⌯ ᴛɪᴛʟᴇ » <a href=\"{0}\">{1}</a>\n⌯ ᴅᴜʀᴀᴛɪᴏɴ » {2} ᴍɪɴᴜᴛᴇs\n⌯ ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ » {3}</blockquote>\n<blockquote>♡ ᴍᴀᴅᴇ ʙʏ ➣ <a href=\"https://t.me/Jani_Ki_Jaanu\">˹𝗢꧊᱂𝛂˼</a></blockquote>"
+stream_2 : "<blockquote>➻ 𝐒ʈᴧʀʈ𝛆ɗ 𝐒ʈʀ𝛆ɑɱɩŋʛ 𝐍๏Ꮗ ●</blockquote>\n<blockquote>⌯ sᴛʀᴇᴀᴍ ᴛʏᴘᴇ » ʟɪᴠᴇ sᴛʀᴇᴀᴍ [ᴜʀʟ]\n⌯ ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ » {0}</blockquote>\n<blockquote>ᴍᴀᴅᴇ ᴡɪᴛʜ ʙʏ <a href=\"https://t.me/Jani_Ki_Jaanu\">˹𝗢꧊᱂𝛂˼</a></blockquote>"
 
 CLOSE_BUTTON  : "ᵎ!ᵎ Close"
 BACK_BUTTON : "𓄲 Back"
