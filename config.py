@@ -15,7 +15,7 @@ ASSUSERNAME = getenv("ASSUSERNAME" , "")
 BASE_URL = getenv("BASE_URL", "https://api.babiesiq.tech")
 API_KEY = getenv("API_KEY", "ADMINBABYX_BE1B36999F84D14C6DAF231FA4768710577EC9A1")
 MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Jani_Sanatani_Power:RamRP@jani.elxnxrd.mongodb.net/?appName=Jani")
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000000000))
 _logger_id_raw = getenv("LOGGER_ID", "0")
 LOGGER_ID = int(_logger_id_raw) if _logger_id_raw and _logger_id_raw.lstrip("-").isdigit() else 0
 OWNER_ID = int(getenv("OWNER_ID", None))
@@ -27,12 +27,12 @@ UPSTREAM_REPO = getenv(
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv("GIT_TOKEN", None) or getenv("GITHUB_TOKEN", None)
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/+K3ZEGFDX56hhZTU1")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+P2G__I2k5wU5MjA1")
-SOURCE = getenv("SOURCE", "https://t.me/govindyadav1431")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Jani_Ki_Jaanu")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+xnUCDYVIAONlMzNl")
+SOURCE = getenv("SOURCE", "https://t.me/Jani_Sanatani_Power")
 CHAT = getenv("CHAT", "")
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "False")
-AUTO_LEAVE_ASSISTANT_TIME = int(getenv("ASSISTANT_LEAVE_TIME", "9000"))
+AUTO_LEAVE_ASSISTANT_TIME = int(getenv("ASSISTANT_LEAVE_TIME", "90000000000000"))
 SONG_DOWNLOAD_DURATION = int(getenv("SONG_DOWNLOAD_DURATION", "9999999"))
 SONG_DOWNLOAD_DURATION_LIMIT = int(getenv("SONG_DOWNLOAD_DURATION_LIMIT", "9999999"))
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "1c21247d714244ddbb09925dac565aed")
@@ -52,10 +52,10 @@ votemode = {}
 autoclean = []
 confirmer = {}
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://litter.catbox.moe/vpe22q.jpg"
+    "START_IMG_URL", "https://litter.catbox.moe/1vkbji.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://litter.catbox.moe/vpe22q.jpg"
+    "PING_IMG_URL", "https://litter.catbox.moe/1vkbji.jpg"
 )
 PLAYLIST_IMG_URL = "https://telegra.ph/file/d723f4c80da157fca1678.jpg"
 STATS_IMG_URL = "https://telegra.ph/file/d30d11c4365c025c25e3e.jpg"
