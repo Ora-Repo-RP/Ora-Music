@@ -67,7 +67,6 @@ def stream_markup_timer(_, chat_id, played, dur):
                 callback_data="GetTimer",
             )
         ],
-        [danger_button(text=_["S_B_3"], url=f"https://t.me/{app.username}?startgroup=true")],
         [danger_button(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
@@ -81,7 +80,6 @@ def stream_markup(_, chat_id):
             success_button(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             success_button(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
-        [danger_button(text=_["S_B_3"], url=f"https://t.me/{app.username}?startgroup=true")],
         [danger_button(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
