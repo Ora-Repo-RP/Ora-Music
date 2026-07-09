@@ -232,7 +232,7 @@ queue_6 : "<b>⏱️ Duration :</b> Unknown (Live Stream)\n\nClick below for ful
 queue_7 : "\nclick on button below to get whole queued list."
 queue_8 : "🎧 <b>{0}</b>\n\n🎵 <b>Streaming :</b> {1}\n📡 <b>Type :</b> {2}\n👤 <b>By :</b> {3}\n{4}"
 
-stream_1 : "<b><blockquote>❖ 𝐒ʈᴧʀʈ𝛆ɗ 𝐒ʈʀ𝛆ɑɱɩŋʛ 𝐍๏Ꮗ ●</blockquote></b>\n<blockquote><b>❍ тɪᴛʟє :</b> <a href={0}>{1}</a>\n<b>❍ ᴅᴜʀᴧᴛɪση :</b> {2} ϻɪηᴜᴛєs\n<b>❍ ʙʏ :</b> {3}</blockquote>\n<b><blockquote>❖ ϻᴧᴅє ʙʏ ➛ [˹𝗢꧊᱂𝛂˼](https://t.me/Jani_Ki_Jaanu)</b></blockquote>"
+stream_1 : "<b><blockquote>❖ 𝐒ʈᴧʀʈ𝛆ɗ 𝐒ʈʀ𝛆ɑɱɩŋʛ 𝐍๏Ꮗ ●</blockquote></b>\n<blockquote><b>❍ тɪᴛʟє :</b> <a href={0}>{1}</a>\n<b>❍ ᴅᴜʀᴧᴛɪση :</b> {2} ϻɪηᴜᴛєs\n<b>❍ ʙʏ :</b> {3}</blockquote>\n<b><blockquote>🔄 𝐏ʟᴀʏ 𝐓ʏᴘᴇ : 🎵 𝐀υᴅɪᴏ</b></blockquote>"
 stream_2 : "<b><blockquote>❖  𝛅ᴛᴧʀᴛєᴅ  𝛅тʀєᴧϻɪηɢ  </blockquote></b>\n<blockquote><b>❍ 𝛅ᴛʀєᴧϻ ᴛʏᴘᴇ :</b> ʟɪᴠᴇ sᴛʀᴇᴀᴍ [ᴜʀʟ]\n<b>❍ ᴘʟᴧʏ ʙʏ :</b> {0}</blockquote>"
 
 CLOSE_BUTTON  : "ᵎ!ᵎ Close"
@@ -244,7 +244,7 @@ BACK_PAGE: "<"
 SO_B_1 : "Add"
 S_B_1 : "Add Me Your Group"
 S_B_2 : "Support"
-S_B_3 : "「 Add Me Your Group 」"
+S_B_3 : "Add Me Your Group"
 S_B_4 : "● Help and Command ●"
 S_B_5 : "Chat ۫ ׅ"
 S_B_6 : "🔔 Update ۫ ׅ"
