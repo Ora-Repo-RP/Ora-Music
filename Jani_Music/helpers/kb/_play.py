@@ -61,11 +61,11 @@ def stream_markup_timer(_, chat_id, played, dur):
             success_button(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             success_button(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
-        [
-            primary_button(
-                text=f"{played} {bar} {dur}",
-                callback_data="GetTimer",
-            )
+       # [
+          #  primary_button(
+              #  text=f"{played} {bar} {dur}",
+                #callback_data="GetTimer",
+           # )
         ],
         [danger_button(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
