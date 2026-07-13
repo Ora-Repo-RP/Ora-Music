@@ -79,9 +79,9 @@ def stream_markup(_, chat_id):
             primary_button(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
             success_button(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
             success_button(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-        [danger_button(text=_["CLOSE_BUTTON"], callback_data="close")],
-    ]
+      #  ],
+      #  [danger_button(text=_["CLOSE_BUTTON"], callback_data="close")],
+  #  ]
     return buttons
 
 def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
