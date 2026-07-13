@@ -54,6 +54,12 @@ def stream_markup_timer(_, chat_id, played, dur):
     else:
         bar = "████████████"
     buttons = [
+         [
+            primary_button(
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
+        ],
         [
             success_button(text="▉▉", callback_data=f"ADMIN Pause|{chat_id}"),
             success_button(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
