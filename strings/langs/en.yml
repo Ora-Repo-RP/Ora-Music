@@ -232,8 +232,8 @@ queue_6 : "<b>⏱️ Duration :</b> Unknown (Live Stream)\n\nClick below for ful
 queue_7 : "\nclick on button below to get whole queued list."
 queue_8 : "🎧 <b>{0}</b>\n\n🎵 <b>Streaming :</b> {1}\n📡 <b>Type :</b> {2}\n👤 <b>By :</b> {3}\n{4}"
 
-stream_1 : "<b><blockquote>❖ 𝐒ʈᴧʀʈ𝛆ɗ 𝐒ʈʀ𝛆ɑɱɩŋʛ 𝐍๏Ꮗ ●</blockquote></b>\n<blockquote><b>❍ тɪᴛʟє :</b> <a href={0}>{1}</a>\n<b>❍ ᴅᴜʀᴧᴛɪση :</b> {2} ϻɪηᴜᴛєs\n<b>❍ ʙʏ :</b> {3}</blockquote>\n<b><blockquote></b></blockquote>"
-stream_2 : "<b><blockquote>❖  𝛅ᴛᴧʀᴛєᴅ  𝛅тʀєᴧϻɪηɢ  </blockquote></b>\n<blockquote><b>❍ 𝛅ᴛʀєᴧϻ ᴛʏᴘᴇ :</b> ʟɪᴠᴇ sᴛʀᴇᴀᴍ [ᴜʀʟ]\n<b>❍ ᴘʟᴧʏ ʙʏ :</b> {0}</blockquote>"
+stream_1 : "<b>❖ 𝐒ʈᴧʀʈ𝛆ɗ 𝐒ʈʀ𝛆ɑɱɩŋʛ 𝐍๏Ꮗ ●</b>\n\n<b>❍ 𝐓ɪᴛʟє ●</b> <a href={0}>{1}</a> \n<b>❍ 𝐓ɪϻє ●</b> {2} 𝐌ɪηυᴛєs \n<b>❍ 𝐏ℓαує∂ 𝐁у ●</b> {3} \n\n<b></b>"
+stream_2 : "<b>❖ 𝐒ʈᴧʀʈ𝛆ɗ 𝐒ʈʀ𝛆ɑɱɩŋʛ 𝐍๏Ꮗ ●</b>\n\n<b>❍ sᴛʀєᴧϻ ᴛʏᴘє ➥</b> ʟɪᴠєsᴛʀєᴧϻ [ υʀʟ ]\n<b>❍ ʙʏ ➥</b> {0}"
 
 CLOSE_BUTTON  : "ᵎ!ᵎ Close"
 BACK_BUTTON : "𓄲 Back"
