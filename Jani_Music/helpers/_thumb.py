@@ -599,7 +599,7 @@ async def get_thumb(
 
     # ▸ Branding
     brand = "♪ @Oramusicbot "
-    f_br  = _font(40, bold=False)
+    f_br  = _font(30, bold=False)
     bw_px = _text_width(draw, brand, f_br)
     draw.text(
         (PAD + (TW - bw_px)//2, EQ_Y - 34), brand,
