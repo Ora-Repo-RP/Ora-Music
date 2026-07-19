@@ -29,7 +29,7 @@ UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv("GIT_TOKEN", None) or getenv("GITHUB_TOKEN", None)
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/Jani_Ki_Jaanu")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+dOsOTS5XXMxhNzJh")
-SOURCE = getenv("SOURCE", "https://t.me/+dOsOTS5XXMxhNzJh")
+SOURCE = getenv("SOURCE", "https://t.me/Jani_About")
 CHAT = getenv("CHAT", "")
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "False")
 AUTO_LEAVE_ASSISTANT_TIME = int(getenv("ASSISTANT_LEAVE_TIME", "90000000000000"))
@@ -58,9 +58,9 @@ PING_IMG_URL = getenv(
     "PING_IMG_URL", "https://litter.catbox.moe/1vkbji.jpg"
 )
 PLAYLIST_IMG_URL = "https://telegra.ph/file/d723f4c80da157fca1678.jpg"
-STATS_IMG_URL = "https://telegra.ph/file/d30d11c4365c025c25e3e.jpg"
-TELEGRAM_AUDIO_URL = "https://litter.catbox.moe/lgmcdj.jpg"
-TELEGRAM_VIDEO_URL = "https://litter.catbox.moe/lgmcdj.jpg"
+STATS_IMG_URL = "https://litter.catbox.moe/kafl29.jpg"
+TELEGRAM_AUDIO_URL = "https://litter.catbox.moe/bqjye6.jpg"
+TELEGRAM_VIDEO_URL = "https://litter.catbox.moe/bqjye6.jpg"
 STREAM_IMG_URL = "https://telegra.ph/file/03efec694e41e891b29dc.jpg"
 IQ_Proxy = "https://i.ytimg.com/vi"
 SOUNCLOUD_IMG_URL = "https://telegra.ph/file/d723f4c80da157fca1678.jpg"
